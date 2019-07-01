@@ -4,7 +4,7 @@
 # Fixed up by JRS for bzip2-0.9.5d release.
 
 CC=cl
-CFLAGS= /DWIN32 /MD /Od /Zi /D_FILE_OFFSET_BITS=64 /nologo
+CFLAGS= /DWIN32 /MD /Od /D_FILE_OFFSET_BITS=64 /nologo
 
 OBJS= blocksort.obj  \
       huffman.obj    \
@@ -17,8 +17,8 @@ OBJS= blocksort.obj  \
 all: lib bzip2 test
 
 bzip2: lib
-	$(CC) $(CFLAGS) /Febzip2 bzip2.c libbz2_a_debug.lib setargv.obj
-	$(CC) $(CFLAGS) /Febzip2recover bzip2recover.c
+	$(CC) $(CFLAGS) /Zi /Fdlibbz2_a_debug.pdb /Febzip2 bzip2.c libbz2_a_debug.lib setargv.obj
+	$(CC) $(CFLAGS) /Zi /Fdlibbz2_a_debug.pdb /Febzip2recover bzip2recover.c
 
 lib: $(OBJS)
 	lib /out:libbz2_a_debug.lib $(OBJS)
