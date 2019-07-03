@@ -2,7 +2,7 @@
 
 ## Requirements
 
-*   bzip2 Sources: [http://www.bzip.org/](http://www.bzip.org/) or the already modified makefiles [here](https://github.com/weltling/libbzip2). Only the name of the library has been changed
+*   bzip2 Sources: [https://www.sourceware.org/bzip2/](https://www.sourceware.org/bzip2/)
 
 *   Common tools used to compile PHP
 
